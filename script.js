@@ -1,6 +1,5 @@
 function calculate() {
     // Get the values from the form
-    const date = document.getElementById('date').value;
     const income = parseFloat(document.getElementById('income').value);
     const cost = parseFloat(document.getElementById('cost').value);
 
@@ -18,12 +17,11 @@ function calculate() {
     const row = table.insertRow();
     
     // Insert cells in the new row
-    row.insertCell(0).innerText = date;
-    row.insertCell(1).innerText = income.toFixed(2);
-    row.insertCell(2).innerText = cost.toFixed(2);
-    row.insertCell(3).innerText = profit.toFixed(2);
-    row.insertCell(4).innerText = investment.toFixed(2);
-    row.insertCell(5).innerText = savings.toFixed(2);
-    row.insertCell(6).innerText = expenses.toFixed(2);
-    row.insertCell(7).innerText = debtRepayment.toFixed(2);
+    row.insertCell(0).innerText = income.toFixed(2);
+    row.insertCell(1).innerText = cost.toFixed(2);
+    row.insertCell(2).innerText = profit.toFixed(2);
+    row.insertCell(3).innerText = investment.toFixed(2);
+    row.insertCell(4).innerText = savings.toFixed(2);
+    row.insertCell(5).innerText = expenses.toFixed(2);
+    row.insertCell(6).innerText = debtRepayment.toFixed(2);
 }
