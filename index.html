@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เว็บบัญชีรายรับรายจ่าย</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        @media (max-width: 600px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr {
+                border: 1px solid #ccc;
+            }
+            td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+            }
+            td:before {
+                position: absolute;
+                top: 6px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+            }
+            td:nth-of-type(1):before { content: "วันที่"; }
+            td:nth-of-type(2):before { content: "รายรับ"; }
+            td:nth-of-type(3):before { content: "ต้นทุน"; }
+            td:nth-of-type(4):before { content: "กำไร"; }
+            td:nth-of-type(5):before { content: "ต่อยอด (20%)"; }
+            td:nth-of-type(6):before { content: "เงินออม (10%)"; }
+            td:nth-of-type(7):before { content: "เงินใช้ (30%)"; }
+            td:nth-of-type(8):before { content: "ใช้หนี้ (40%)"; }
+        }
+    </style>
+</head>
+<body>
+    <h1>เว็บบัญชีรายรับรายจ่าย</h1>
+    <form id="incomeForm">
+        <label for="date">วันที่:</label>
+        <input type="date" id="date" name="date" required><br><br>
+        <label for="income">รายรับ:</label>
+        <input type="number" id="income" name="income" required><br><br>
+        <label for="cost">ต้นทุน:</label>
+        <input type="number" id="cost" name="cost" required><br><br>
+        <button type="button" onclick="calculate()">คำนวณ</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>วันที่</th>
+                <th>รายรับ</th>
+                <th>ต้นทุน</th>
+                <th>กำไร</th>
+                <th>ต่อยอด (20%)</th>
+                <th>เงินออม (10%)</th>
+                <th>เงินใช้ (30%)</th>
+                <th>ใช้หนี้ (40%)</th>
+            </tr>
+        </thead>
+        <tbody id="results">
+            <!-- Results will be inserted here -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
